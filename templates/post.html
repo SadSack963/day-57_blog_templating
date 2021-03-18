@@ -2,26 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>John's Blog</title>
+    <title>{{ name }}'s Blog</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
 <div class="wrapper">
     <div class="top">
-        <div class="title"><h1>John's Blog</h1></div>
+        <div class="title"><h1>{{ name }}'s Blog</h1></div>
            </div>
         <div class="content">
             <div class="card">
                 <h2>{{ blog['title'] }}</h2>
                 <p>{{ blog['body'] }}</p>
-                <a href="/">Back</a>
+                <a href="{{ url_for('home') }}">Back</a>
             </div>
 
     </div>
 </div>
 </body>
 <footer>
-    <p>&#9400; {{start_year}} - {{current_year}} Designed by John, at home in Milton Keynes.</p>
+    <p>&#9400; {{start_year}} - {{current_year}} Designed by {{ name }}, at home in Milton Keynes.</p>
 </footer>
 </html>

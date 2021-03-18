@@ -2,9 +2,9 @@ from flask import Flask, render_template
 import requests
 from datetime import datetime as dt
 
+DESIGNER = 'John'
 START_YEAR = '2021'
 CURRENT_YEAR = str(dt.now().year)
-
 
 app = Flask(__name__)
 
@@ -20,8 +20,9 @@ def home():
     return render_template(
         "index.html",
         blogs=blogs,
+        name=DESIGNER,
         start_year=START_YEAR,
-        current_year=CURRENT_YEAR
+        current_year=CURRENT_YEAR,
     )
 
 
@@ -31,8 +32,9 @@ def post(blog_id):
     return render_template(
         "post.html",
         blog=blogs[blog_id],
+        name=DESIGNER,
         start_year=START_YEAR,
-        current_year=CURRENT_YEAR
+        current_year=CURRENT_YEAR,
     )
 
 
